@@ -1,10 +1,61 @@
 <div class="container">
   <div class="upperData">
-    <img src="../assets/day.jpg" alt="Landscape on day" *ngIf="14 > 15">
-    <img src="../assets/night.jpg" alt="Landscape on night" *ngIf="14 > 15">
+    <img src="../assets/hotLand.jpg" alt="Landscape on sunny day" *ngIf="14 > 15">
+    <img src="../assets/coldLand.jpg" alt="Landscape on cold day" *ngIf="14 <= 15">
+    <div class="weatherData">
+      <div class="location">
+        Verona
+      </div>
+      <div class="temperature">
+        {{ 15.50 | number : '1.0-0'}}°C
+      </div>
+    </div>
   </div>
   <div class="lowerData">
+    <div class="moreInfoLabel">
+      More information
+    </div>
+    <div class="moreInfoContainer">
+      <div class="infoBlock">
+        <div class="infoBlockLabel">
+          <img src="../assets/coldTempIcon.png" alt="">
+          <span>Min</span>
+        </div>
+        <div class="infoBlockValue">
+          10°C
+        </div>
+      </div>
 
+      <div class="infoBlock">
+        <div class="infoBlockLabel">
+          <img src="../assets/hotTempIcon.png" alt="">
+          <span>Max</span>
+        </div>
+        <div class="infoBlockValue">
+          15°C
+        </div>
+      </div>
+
+      <div class="infoBlock">
+        <div class="infoBlockLabel">
+          <img src="../assets/humidityIcon.png" alt="">
+          <span>Humidity</span>
+        </div>
+        <div class="infoBlockValue">
+          75%
+        </div>
+      </div>
+
+      <div class="infoBlock">
+        <div class="infoBlockLabel">
+          <img src="../assets/windIcon2.png" alt="">
+          <span>Wind speed</span>
+        </div>
+        <div class="infoBlockValue">
+          10 Km/h
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
