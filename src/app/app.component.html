@@ -1,13 +1,19 @@
+<div class="search">
+  <form #form="ngForm" (submit)="onCitySubmit()">
+    <input type="text" placeholder="Search for a city" name="city" [(ngModel)]="cityName">
+  </form>
+</div>
+
 <div class="container">
   <div class="upperData">
-    <img src="../assets/hotLand.jpg" alt="Landscape on sunny day" *ngIf="14 > 15">
-    <img src="../assets/coldLand.jpg" alt="Landscape on cold day" *ngIf="14 <= 15">
+    <img src="../assets/hotLand.jpg" alt="Landscape on sunny day" *ngIf="cityTemp > 15">
+    <img src="../assets/coldLand.jpg" alt="Landscape on cold day" *ngIf="cityTemp <= 15">
     <div class="weatherData">
       <div class="location">
-        Verona
+        {{cityNameSelected | titlecase }}
       </div>
       <div class="temperature">
-        {{ 15.50 | number : '1.0-0'}}°C
+        {{cityTemp | number: '1.0-0'}}°C
       </div>
     </div>
   </div>
@@ -22,7 +28,7 @@
           <span>Min</span>
         </div>
         <div class="infoBlockValue">
-          10°C
+          {{cityTempMin | number: '1.0-0'}} °C
         </div>
       </div>
 
@@ -32,7 +38,7 @@
           <span>Max</span>
         </div>
         <div class="infoBlockValue">
-          15°C
+          {{cityTempMax | number: '1.0-0'}} °C
         </div>
       </div>
 
@@ -42,7 +48,7 @@
           <span>Humidity</span>
         </div>
         <div class="infoBlockValue">
-          75%
+          {{cityHumidity}} %
         </div>
       </div>
 
@@ -52,11 +58,13 @@
           <span>Wind speed</span>
         </div>
         <div class="infoBlockValue">
-          10 Km/h
+          {{cityWindSpeed | number: '1.2-2'}} Km/h
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<router-outlet></router-outlet>
+<footer>
+  Made by Alessandro Brun <a href="https://www.linkedin.com/in/alessandrobrun/">Linkedin page</a> - Weather data from <a href="https://openweathermap.org">openweathermap.org</a>
+</footer>
